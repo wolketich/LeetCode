@@ -1,3 +1,10 @@
+Last login: Mon Mar 10 13:41:07 on ttys000
+Started
+> cd myProjects/LeetCode
+> git commit -m @3306. Count of Substrings Containing Every Vowel and K Consonants
+> git commit -m @3306. Count of Substrings Containing Every Vowel and K Consonants II
+> git commit -m "3306. Count of Substrings Containing Every Vowel and K Consonants II"
+On branch main
 class Solution {
     func countCompleteSubstrings(_ word: String, _ k: Int) -> Int {
         let vowels: Set<Character> = ["a", "e", "i", "o", "u"]
@@ -11,7 +18,7 @@ class Solution {
 
         for right in 0..<n {
             let c = chars[right]
-            
+
             if vowels.contains(c) {
                 vowelCount[c, default: 0] += 1
             } else {
@@ -21,42 +28,5 @@ class Solution {
             while consonantCount > k {
                 let lc = chars[left]
                 if vowels.contains(lc) {
-                    vowelCount[lc]! -= 1
-                    if vowelCount[lc]! == 0 {
-                        vowelCount.removeValue(forKey: lc)
-                    }
-                } else {
-                    consonantCount -= 1
-                }
-                left += 1
-            }
-
-            if consonantCount == k && vowelCount.count == 5 {
-                count += 1
-                var tempLeft = left
-                var tempVowelCount = vowelCount
-                var tempConsonantCount = consonantCount
-
-                while tempLeft < right {
-                    let lc = chars[tempLeft]
-                    if vowels.contains(lc) {
-                        tempVowelCount[lc]! -= 1
-                        if tempVowelCount[lc]! == 0 {
-                            break
-                        }
-                    } else {
-                        tempConsonantCount -= 1
-                        if tempConsonantCount < k {
-                            break
-                        }
-                    }
-                    count += 1
-                    tempLeft += 1
-                }
-            }
-        }
-
-        return count
-    }
-}
-
+countOfSubstrings/Solution.swift                              1,1            Top
+-- INSERT --
